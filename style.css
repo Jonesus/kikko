@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'comicsans';
+    src: url('comicsans.woff2');
+}
+
+* {
+    font-family: comicsans;
+}
+
+
+body {
+    margin: 0;
+    gap: 24px;
+    padding-block: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lidl {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 32px;
+    left: 32px;
+    animation: lidl 2s ease-in-out infinite both;
+    cursor: pointer;
+}
+
+@keyframes lidl {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        transform: scale(0.91);
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        transform: scale(0.87);
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+
+article {
+    max-width: 60ch;
+    margin-inline: 24px;
+    background: white;
+    padding: 16px;
+    border: 4px solid blue;
+    text-align: center;
+}
+
+img {
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.keksi {
+    background: pink;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 4px solid orange;
+    text-align: center;
+    padding-bottom: 24px;
+    margin: 16px;
+    display: none;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 24px;
+}
+
+.tahti {
+    background-color: orange;
+    width: fit-content;
+    font-size: 2em;
+    padding-inline: 64px;
+    padding-block: 32px;
+    clip-path: polygon(100% 50%, 78.98% 57.76%, 93.3% 75%, 71.21% 71.21%, 75% 93.3%, 57.76% 78.98%, 50% 100%, 42.24% 78.98%, 25% 93.3%, 28.79% 71.21%, 6.7% 75%, 21.02% 57.76%, 0% 50%, 21.02% 42.24%, 6.7% 25%, 28.79% 28.79%, 25% 6.7%, 42.24% 21.02%, 50% 0%, 57.76% 21.02%, 75% 6.7%, 71.21% 28.79%, 93.3% 25%, 78.98% 42.24%);
+
+    animation: wobble 3s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+.tahti:active {
+    transform: scale(1.5)
+}
+
+@keyframes wobble {
+    from {
+        rotate: -10deg;
+    }
+
+    to {
+        rotate: 10deg;
+    }
+}
+
+.jesari {
+    height: 150px;
+    width: 100%;
+    background: transparent;
+    background-size: 150px 150px;
+    background-image: url(jesari.png);
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    animation: animatedBackground 30s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.joulu {
+    --s: 75px;
+    /* control the size */
+    --_c: #0000, #fff 1deg 79deg, #0000 81deg;
+    --g0: conic-gradient(from 140deg at 50% 87.5%, var(--_c));
+    --g1: conic-gradient(from 140deg at 50% 81.25%, var(--_c));
+    --g2: conic-gradient(from 140deg at 50% 75%, var(--_c));
+    --g3: conic-gradient(at 10% 20%, #0000 75%, #fff 0);
+    background:
+        var(--g0) 0 calc(var(--s)/-4), var(--g0) var(--s) calc(3*var(--s)/4),
+        var(--g1), var(--g1) var(--s) var(--s),
+        var(--g2) 0 calc(var(--s)/ 4), var(--g2) var(--s) calc(5*var(--s)/4),
+        var(--g3) calc(var(--s)/-10) var(--s),
+        var(--g3) calc(9*var(--s)/10) calc(2*var(--s)),
+        repeating-conic-gradient(from 45deg, #a31e39 0 25%, #31570e 0 50%);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+}
